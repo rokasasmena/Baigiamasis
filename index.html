@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/Reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/meniu_file.css">
+</head>
+<body>
+<header>
+    <div class="nav-bar">
+        <a href="index.html"><i class="fa fa-dribbble"></i> Tie Geresni</a>
+        <a href="Komanda.html">Komanda</a>
+        <a href="Lyga.html">Lyga</a>
+        <a href="Rungtynes.html">Rungtynes</a>
+        <a href="Kontaktai.html">Kontaktai</a>
+        <a href="Naujienos.html">Naujienos</a>
+        <div class="login-container">
+            <form action="includes/login.php" method="post">
+                <input type="text" name="email" placeholder="E-mail">
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit" name="login-submit">Login</button>
+            </form>
+            <a href="SignUP.html">Sign Up</a>
+            <form action="includes/logout.php" method="post">
+                <button type="submit" name="logout-submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</header>
+<main>
+    <div id="grid">
+        <div class="gridItem1"></div>
+        <div class="gridItem2">
+            <h1>„Tie geresni“</h1>
+            <br>
+            <p> „Tie geresni“ - reprezentacinė Kauno megėjų komanda, kurios tikslas – garbingai atstovauti savo miestui
+                tiek miesto krepšinio pirmenybėse, tiek Kauno rajonų lygose, bei turnyruose. Geresni siekia tapti
+                žinoma dėl pergalių vietinėse bei Kauno rajono pirmenybių. Siekiame fanų palaikymo bei užpildytų mokyklų
+                tribūnų. Laikinosios sostinės krepšinio komanda – tai tam tikra bendruomenė, visuomeniška organizacija,
+                į
+                kurią kviečiami įstoti visi kauniečiai, mylintys krepšinį bei norintys būti jo dalimi. Klubas menantis
+                jau
+                daugiau nei 4 metų pakilimų ir nuopuolių istoriją, kviečiantis ne tik
+                žiūrėti krepšinį, bet ir sveikai gyventi bei būti socialiai atsakingu.</p>
+
+            <img src="/IMG/2018-2019m sezonas.jpg" alt="Komandos nuotrauka" style="width:600px;height:400px;">
+            <h2> 2018m - 2019m sezonas </h2>
+            <img src="IMG/2017-2018m sezonas.jpg" alt="Komandos nuotrauka" style="width:600px;height:400px;">
+            <h2> 2017m - 2018m sezonas </h2>
+            <img src="IMG/2016-2017 sezonas.jpg" alt="Komandos nuotrauka" style="width:600px;height:400px;">
+            <h2> 2016m - 2017m sezonas </h2>
+        </div>
+        <div class="gridItem3">
+            <div class="main-banner" id="main-banner">
+                <div class="imgbanbtn imgbanbtn-prev" id="imgbanbtn-prev"></div> <!--prieš tai buvęs banneris-->
+                <div class="imgban" id="imgban3">
+                    <div class="imgban-box">
+                        <h2>Tie geresni - Resmila</h2>
+                        <p> 85-77</p>
+                    </div>
+                </div>
+                <div class="imgban" id="imgban2">
+                    <div class="imgban-box">
+                        <h2>Tie geresni - Atžalynas</h2>
+                        <p> 56-55</p>
+                    </div>
+                </div>
+                <div class="imgban" id="imgban1">
+                    <div class="imgban-box">
+                        <h2>Tie geresni - Spurtas</h2>
+                        <p> 62-76</p>
+                    </div>
+                </div>
+                <div class="imgbanbtn imgbanbtn-next" id="imgbanbtn-next"></div>
+            </div>
+            <div class="epizodai">
+                <p>Rungtyniu epizodai</p>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+
+<script>
+    let bannerStatus = 1;
+    let bannerTimer = 3000;
+    window.onload = function () {
+        bannerLoop();
+    }
+
+    let startBannerLoop = setInterval(function () {
+        bannerLoop();
+    }, bannerTimer);
+
+    <!-- kai užvedi pelę sustoja, patraukus veikia, startBannerLoop turi būti toks pat-->
+    document.getElementById("main-banner").onmouseenter = function () {
+        clearInterval(startBannerLoop);
+    }
+    document.getElementById("main-banner").onmouseleave = function () {
+        startBannerLoop = setInterval(function () {
+            bannerLoop();
+        }, bannerTimer);
+    }
+
+    document.getElementById("imgbanbtn-prev").onclick = function () {
+        if (bannerStatus === 1) {                             <!--ir reikšmė ir tipas turi būti toks pat-->
+            bannerStatus = 2;
+        } else if (bannerStatus === 2) {
+            bannerStatus = 3;
+        } else if (bannerStatus === 3) {
+            bannerStatus = 1;
+        }
+        bannerLoop();
+    }
+    document.getElementById("imgbanbtn-next").onclick = function () {
+        bannerLoop();
+    }
+
+    function bannerLoop() {
+        if (bannerStatus === 1) {
+            document.getElementById("imgban2").style.opacity = "0";
+            setTimeout(function () {
+                document.getElementById("imgban1").style.right = "0px";
+                document.getElementById("imgban1").style.zIndex = "1000";
+                document.getElementById("imgban2").style.right = "-1200px";
+                document.getElementById("imgban2").style.zIndex = "1500";
+                document.getElementById("imgban3").style.right = "1200px";
+                document.getElementById("imgban3").style.zIndex = "500";
+            }, 500);
+            setTimeout(function () {
+                document.getElementById("imgban2").style.opacity = "1";
+            }, 1000);
+            bannerStatus = 2;
+        } else if (bannerStatus === 2) {
+            document.getElementById("imgban3").style.opacity = "0";
+            setTimeout(function () {
+                document.getElementById("imgban2").style.right = "0px";
+                document.getElementById("imgban2").style.zIndex = "1000";
+                document.getElementById("imgban3").style.right = "-1200px";
+                document.getElementById("imgban3").style.zIndex = "1500";
+                document.getElementById("imgban1").style.right = "1200px";
+                document.getElementById("imgban1").style.zIndex = "500";
+            }, 500);
+            setTimeout(function () {
+                document.getElementById("imgban3").style.opacity = "1";
+            }, 1000);
+            bannerStatus = 3;
+        } else if (bannerStatus === 3) {
+            document.getElementById("imgban1").style.opacity = "0";
+            setTimeout(function () {
+                document.getElementById("imgban3").style.right = "0px";
+                document.getElementById("imgban3").style.zIndex = "1000px";
+                document.getElementById("imgban1").style.right = "-1200px";
+                document.getElementById("imgban1").style.zIndex = "1500px";
+                document.getElementById("imgban2").style.right = "1200px";
+                document.getElementById("imgban2").style.zIndex = "500px";
+            }, 500);
+            setTimeout(function () {
+                document.getElementById("imgban1").style.opacity = "1";
+            }, 1000);
+            bannerStatus = 1;
+        }
+    }
+</script>
+<footer>
+    <div class="footer">
+        <p>Created by Dovydas Labutis & Rokas Ašmena &copy; 2019</p>
+    </div>
+</footer>
+
+</html>

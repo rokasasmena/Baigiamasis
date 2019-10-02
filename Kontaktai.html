@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/Reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/Kontaktai.css">
+
+</head>
+<body>
+
+<header>
+    <div class="nav-bar">
+        <a href="index.html"><i class="fa fa-dribbble"></i> Tie Geresni</a>
+        <a href="Komanda.html">Komanda</a>
+        <a href="Lyga.html">Lyga</a>
+        <a href="Rungtynes.html">Rungtynes</a>
+        <a href="Kontaktai.html">Kontaktai</a>
+        <a href="Naujienos.html">Naujienos</a>
+        <div class="login-container">
+            <form action="includes/login.php" method="post">
+                <input type="text" name="email" placeholder="E-mail">
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit" name="login-submit">Login</button>
+            </form>
+            <a href="SignUP.html">Sign Up</a>
+            <form action="includes/logout.php" method="post">
+                <button type="submit" name="logout-submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</header>
+<div class="Mainbar">
+    <p>Komanda įkurta:2016 m.
+        <br>
+        Namų sporto arena:<b>Vytauto Didžiojo universiteto „Atžalyno“ progimnazija</b>
+        <br>
+        Partizanų g. 46
+        <br>
+        Kaunas, LT-49460
+        <br>
+        Komandos vadovas:Rokas Ašmena
+        <br>
+        Kontaktai:<a href="mailto:rokasasmena@gmail.com">rokasasmena@gmail.com</a>
+    </p>
+    <div id="googleMap" style="width:100%;height:400px;"></div>
+    <script>
+        function myMap() {
+            let mapProp = {
+                center: new google.maps.LatLng(54.919112, 23.961701),
+                zoom: 15
+            };
+            let map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBWjadzeVNNDCooZWv31v41ycKecfKVGU&callback=myMap"></script>
+
+</div>
+
+
+</body>
+<footer>
+    <div class="footer">
+        <p>Created by Dovydas Labutis & Rokas Ašmena &copy; 2019</p>
+    </div>
+</footer>
+</html>

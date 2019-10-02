@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/Reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/lyga.css">
+</head>
+<body>
+<header>
+    <div class="nav-bar">
+        <a href="index.html"><i class="fa fa-dribbble"></i> Tie Geresni</a>
+        <a href="Komanda.html">Komanda</a>
+        <a href="Lyga.html">Lyga</a>
+        <a href="Rungtynes.html">Rungtynes</a>
+        <a href="Kontaktai.html">Kontaktai</a>
+        <a href="Naujienos.html">Naujienos</a>
+        <div class="login-container">
+            <form action="includes/login.php" method="post">
+                <input type="text" name="mailud" placeholder="E-mail">
+                <input type="password" name="pwd" placeholder="Password">
+                <button type="submit" name="login-submit">Login</button>
+            </form>
+            <a href="SignUP.html">Sign Up</a>
+            <form action="includes/logout.php" method="post">
+                <button type="submit" name="logout-submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</header>
+
+<div id="grid">
+    <div class="griditem1"></div>
+    <div class="griditem2"></div>
+
+    <div class="griditem3"></div>
+
+    <a onclick="pop()" class="btn">Apie lygą</a>
+
+    <div id="box">
+        <span class="ion-chechmark-round">Kauno miesto krepšinio lyga</span>
+        <h1> KKML krepšinio pirmenybes, turnyrus ir įvairias šventes organizuoja visiems norintiems rungtyniauti bei
+            gerai praleisti laisvalaikį, pradedant 9 metų vaikais ir baigiant krepšinio veteranais. KKML renginiuose
+            vienokia ar kitokia forma dalyvauja praktiškai visi Kauno regiono krepšininkai mėgėjai.
+
+            Jau seniai KKML pirmenybėse dalyvaujančių komandų skaičius viršija 200 komandų. 2011-2012 m. KKML
+            pirmenybėse dalyvavo 231 komanda, 2012-2013 m. sezone virš 240 komandų. 2013-2014 metais dvidešimt dviejuose
+            pagrindiniuose čempionatuose varžėsi 259 komandos, o kartu su dar vykusiais aštuoniais atskirais turnyrais
+            viso KKML renginiuose dalyvavo net 323 komandos!</h1>
+        <a onclick="pop()" class="close">Close</a>
+    </div>
+
+    <script type="text/javascript">
+        let c = 0;
+
+        function pop() {
+            if (c === 0) {
+                document.getElementById("box").style.display = "block";
+                c = 1;
+            } else {
+                document.getElementById("box").style.display = "none";
+                c = 1;
+            }
+        }
+    </script>
+</div>
+</body>
+
+<footer>
+    <div class="footer">
+        <p>Created by Dovydas Labutis & Rokas Ašmena &copy; 2019</p>
+    </div>
+</footer>
+<script defer src="JS/script.js"></script>
+</html>

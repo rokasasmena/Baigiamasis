@@ -1,0 +1,153 @@
+body {
+    background: darkgray;
+}
+
+/* Style the navbar */
+.nav-bar {
+    overflow: hidden;
+    background-color: #363636;
+}
+
+/* Navbar links */
+.nav-bar a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* Navbar links on mouse-over */
+.nav-bar a:hover {
+    background-color: #F67280;
+    color: black;
+    border-radius: 8px;
+}
+
+/* Active/current link */
+.nav-bar a.active {
+    background-color: #F67280;
+    color: white;
+}
+
+/* Style the input field inside the navbar */
+.nav-bar input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 15px;
+    border: 2px solid grey;
+    border-radius: 11px;
+    width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+.nav-bar input[type=password] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 15px;
+    width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+    border: 2px solid grey;
+    border-radius: 11px;
+
+}
+
+/* Style the button inside the input container */
+.nav-bar .login-container button {
+    float: right;
+    background-color: #F67280;
+    color: white;
+    padding: 6px;
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px solid grey;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.nav-bar .login-container button:hover {
+    background: palevioletred;
+}
+
+.nav-bar .login-container form {
+    float: right;
+}
+
+.nav-bar .login-container a {
+    float: right;
+    margin: 0 -3px 0 -20px;
+}
+
+/*popup css*/
+
+@import "http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css";
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #e74c3c;
+    font-size: 20px;
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+#box {
+    width: 700px;
+    overflow: hidden;
+    background: #f1f1f1;
+    box-shadow: 0 0 20px black;
+    border-radius: 8px;
+    transform: translate(50%, 30%);
+    padding: 50px 50px;
+    text-align: center;
+    display: none;
+}
+
+#box span {
+    color: #333333;
+    font-size: 40px;
+    display: block;
+    margin: 20px 0;
+    font-family:  Monaco, monospace;
+}
+
+#box h1 {
+    text-align: justify;
+    color: #333;
+    font-size: 20px;
+}
+
+.close {
+    font-size: 18px;
+    color: white;
+    margin-top: 25px;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: #3498db;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+
+.footer {
+    background-color: #363636;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    padding: 10px 0 10px 10px;
+    font-family: "Lucida Console", Monaco, monospace;
+}

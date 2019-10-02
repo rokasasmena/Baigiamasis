@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/Reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/SignUP.css">
+</head>
+<body>
+<header>
+    <div class="nav-bar">
+        <a href="index.html">Tie Geresni</a>
+        <a href="Komanda.html">Komanda</a>
+        <a href="Lyga.html">Lyga</a>
+        <a href="Rungtynes.html">Rungtynes</a>
+        <a href="Kontaktai.html">Kontaktai</a>
+        <a href="Naujienos.html">Naujienos</a>
+        <div class="login-container">
+            <form action="includes/login.php" method="post">
+                <input type="text" name="email" placeholder="E-mail">
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit" name="login-submit">Login</button>
+            </form>
+            <a href="SignUP.html">Sign Up</a>
+            <form action="includes/logout.php" method="post">
+                <button type="submit" name="logout-submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="main">
+        <h1>Sign UP</h1>
+        <p>This is the the sign up form, please enter your email and password and sigh up for our website :)</p>
+        <form action="includes/signup.inc.php" method="post">
+            <input type="text" name="email" placeholder="E-mail">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit" name="signup-submit">Sign UP</button>
+        </form>
+    </div>
+</main>
+<footer>
+    <div class="footer">
+        <p>Created by Dovydas Labutis & Rokas Ašmena &copy; 2019</p>
+    </div>
+</footer>
+</body>
+</html>
